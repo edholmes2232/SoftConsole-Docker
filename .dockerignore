@@ -1,0 +1,6 @@
+.git/
+.devcontainer/
+*.md
+LICENSE
+.gitignore
+.dockerignore

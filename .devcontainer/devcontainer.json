@@ -1,0 +1,34 @@
+{
+    "name": "Microchip SoftConsole 2022.2",
+    // =========================================================================
+    // Image Selection - Uncomment the ONE you want to use
+    // =========================================================================
+    // Option 1: Pull from GitHub Container Registry (GHCR)
+    "image": "ghcr.io/edholmes2232/softconsole:2022.2",
+    // Option 2: Pull from Docker Hub
+    // "image": "docker.io/edholmes2232/softconsole:2022.2",
+    // Option 3: Build locally from the surrounding Dockerfile
+    // "build": {
+    //     "dockerfile": "../Dockerfile",
+    //     "context": "..",
+    //     "options": [
+    //         "--build-context", "softconsole-installer=~/Downloads/SoftConsole"
+    //     ]
+    // },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.makefile-tools"
+            ]
+        }
+    },
+    // Mount the current workspace directory automatically
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "root"
+}
