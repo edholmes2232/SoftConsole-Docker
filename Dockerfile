@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386 && \
     libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxi6 \
     libxrandr2 libxtst6 libdbus-1-3 libfontconfig1 libpango-1.0-0 \
     libpcre3 libpcre2-8-0 liblz4-1 liblzma5 libzstd1 libxxhash0 \
-    libc6:i386 libstdc++6:i386 libgcc-s1:i386 \
+    libc6:i386 libstdc++6:i386 libgcc-s1:i386 python3 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install SoftConsole from external build context
@@ -24,5 +24,7 @@ RUN --mount=type=bind,from=softconsole-installer,target=/mnt/softconsole \
 
 # Set PATH to include RISC-V Toolchains
 ENV PATH="/usr/local/microchip/SoftConsole-v2022.2/riscv-unknown-elf-gcc/bin:${PATH}"
+ENV SC_INSTALL_DIR=/usr/local/microchip/SoftConsole-v2022.2
+
 
 CMD ["/bin/bash"]
