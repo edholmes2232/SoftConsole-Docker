@@ -11,7 +11,8 @@ RUN dpkg --add-architecture i386 && \
     libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxi6 \
     libxrandr2 libxtst6 libdbus-1-3 libfontconfig1 libpango-1.0-0 \
     libpcre3 libpcre2-8-0 liblz4-1 liblzma5 libzstd1 libxxhash0 \
-    libc6:i386 libstdc++6:i386 libgcc-s1:i386 python3 \
+    libc6:i386 libstdc++6:i386 libgcc-s1:i386 python3 libwebkit2gtk-4.0-37 \
+    libyaml-dev libelf-dev libssl-dev mono-devel mono-complete \  
     && rm -rf /var/lib/apt/lists/*
 
 # Install SoftConsole from external build context
